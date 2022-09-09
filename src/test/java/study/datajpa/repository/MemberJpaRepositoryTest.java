@@ -39,7 +39,7 @@ class MemberJpaRepositoryTest {
         memberJpaRepository.save(member1);
         memberJpaRepository.save(member2);
 
-        //단건 좆회 검색
+        //단건 조회 검색
         Member findMember1 = memberJpaRepository.findByID(member1.getId()).get();
         Member findMember2 = memberJpaRepository.findByID(member2.getId()).get();
         assertThat(findMember1).isEqualTo(member1);
