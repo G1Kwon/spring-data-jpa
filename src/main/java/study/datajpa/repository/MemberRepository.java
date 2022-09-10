@@ -16,4 +16,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     //@Query 없어도 돌아간다. 메서드 명을 가지고 1차로 찾기 때문이다.
 //    @Query(name = "Member.findByUsername")
     List<Member> findByUsername(@Param("username") String username);
+
+    @Query("select m from Member m where m.username = :username and m.age = :age")
+    List<Member> findUser(@Param("username") String username, @Param("age") int age);
 }
